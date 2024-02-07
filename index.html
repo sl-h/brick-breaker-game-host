@@ -23,6 +23,12 @@
 
         document.body.style.textAlign = "left";
       }
+      else
+      {
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "27%";
+        canvas.style.height = "27%";
+      }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/brick-breaker-game-host.data",
