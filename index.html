@@ -16,15 +16,9 @@
 
     function resize() {
         var canvas = document.querySelector("#unity-canvas");
-        var aspectRatio = canvas.height / canvas.width;
-        var screenAspectRatio = window.window / window.innerWidth;
-        if (screenAspectRatio > aspectRatio) {
-            canvas.style.width = "auto";
-            canvas.style.height = "100%";
-        } else {
-            canvas.style.width = "100%";
-            canvas.style.height = "auto";
-        }
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+
     }
 
     window.addEventListener('resize', resize);
@@ -53,7 +47,7 @@
         productName: "BrickBreaker3D",
         productVersion: "0.1",
         // matchWebGLToCanvasSize: true, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
     });
 </script>
 </body>
