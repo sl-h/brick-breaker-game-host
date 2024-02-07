@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | BrickBreaker3D</title>
-</head>
-<body style="text-align: center; padding: 0; border: 0; margin: 0;">
-<canvas id="unity-canvas" width=1080 height=1920 style="width: 1080px; height: 1920px; background: #231F20"></canvas>
-<script src="Build/brick-breaker-game-host.loader.js"></script>
-<script>
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <canvas id="unity-canvas" width=1170 height=2532 style="width: 1170px; height: 2532px; background: #231F20"></canvas>
+    <script src="Build/brick-breaker-game-host.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
@@ -22,22 +22,9 @@
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
-    } else {
-        var canvas = document.querySelector("#unity-canvas");
-        var aspectRatio = 1080 / 1920;
-        var screenAspectRatio = window.screen.width / window.screen.height;
-        if (screenAspectRatio > aspectRatio) {
-            canvas.style.width = "auto";
-            canvas.style.height = "100%";
-        } else {
-            canvas.style.width = "100%";
-            canvas.style.height = "auto";
-        }
-        // canvas.style.width = "27%";
-        // canvas.style.height = "27%";
-    }
+      }
 
-    createUnityInstance(document.querySelector("#unity-canvas"), {
+      createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/brick-breaker-game-host.data",
         frameworkUrl: "Build/brick-breaker-game-host.framework.js",
         codeUrl: "Build/brick-breaker-game-host.wasm",
@@ -47,7 +34,7 @@
         productVersion: "0.1",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
