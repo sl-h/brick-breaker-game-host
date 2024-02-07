@@ -13,9 +13,12 @@
 
 <script>
 
+
     function resize() {
         var canvas = document.querySelector("#unity-canvas");
-        if (window.innerWidth > window.innerHeight) {
+        var aspectRatio = canvas.height / canvas.width;
+        var screenAspectRatio = window.window / window.innerWidth;
+        if (screenAspectRatio > aspectRatio) {
             canvas.style.width = "auto";
             canvas.style.height = "100%";
         } else {
@@ -25,6 +28,7 @@
     }
 
     window.addEventListener('resize', resize);
+    resize();
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
